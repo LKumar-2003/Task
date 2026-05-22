@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main {
+            border: 2px solid black;
+            width: 25%;
+            height: 120px;
+            display: flex;
+            justify-content: space-evenly;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+
+    </div>
+
+</body>
+<script>
+    let data = [
+        { id: 1, name: "Lokesh", age: 23 },
+        { id: 2, name: "Bhavesh", age: 24 },
+        { id: 3, name: "Trun", age: 24 }
+    ]
+    document.getElementById("main").innreHTML =
+        // let = data.filter(item => (
+        //     item.name == "lokesh"
+
+        // ))
+
+    data.map(item => (`<div >
+            <h2>${item.id}</h2>
+            <h3>${item.name}</h3>
+            <h4>${item.age}</h4>
+            </div>`)).join("")
+</script>
+
+</html>

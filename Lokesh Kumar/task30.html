@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            font-size: x-large;
+            width: 50%;
+            justify-content: center;
+            margin-left: 45%;
+
+        }
+
+        #maindiv {
+            border: 2px solid black;
+            width: 100%;
+            height: 90vh;
+            background-color: brown;
+            display: flex;
+
+        }
+
+        #category {
+            border: 2px solid black;
+            width: 30%;
+            height: 60vh;
+            background-color: cadetblue;
+            text-align: center;
+            padding-top: 7%;
+            margin-top: 5%;
+            margin-left: 3%;
+        }
+
+        button {
+            width: 40%;
+            gap: 20%;
+
+        }
+
+        #seconddiv {
+            border: 2px solid black;
+            width: 30%;
+            height: 60vh;
+            background-color: cadetblue;
+            text-align: center;
+            padding-top: 7%;
+            margin-top: 5%;
+            margin-left: 3%;
+
+        }
+
+        #thirddiv {
+            border: 2px solid black;
+            width: 30%;
+            height: 60vh;
+            background-color: cadetblue;
+            text-align: center;
+            padding-top: 7%;
+            margin-top: 5%;
+            margin-left: 3%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ALL CATEGORY</h1>
+
+    <div id="maindiv">
+        <div id="category">
+
+        </div>
+        <div id="seconddiv">
+
+        </div>
+        <div id="thirddiv">
+
+        </div>
+
+    </div>
+
+</body>
+<script>
+    const categoryData = [
+        { id: 1, category: "Fashion" },
+        { id: 2, category: "Food" },
+        { id: 3, category: "Home" },
+        { id: 4, category: "Electronics" }
+
+    ];
+    const productname = [
+        { id: 1, name: "Shirt", category: "Fashion" },
+        { id: 2, name: "T-shirt", category: "Fashion" },
+        { id: 3, name: "Pizza", category: "Food" },
+        { id: 4, name: "Burger", category: "Food" },
+        { id: 5, name: "Pooja needs", category: "Home" },
+        { id: 6, name: "cookwear", category: "Home" },
+        { id: 7, name: "Mobile", category: "Electronics" },
+        { id: 8, name: "Laptop", category: "Electronics" },
+    ];
+    const productdetails = [
+        { id: 1, name: "shirt", types: "formal", quality: "Good", price: "100$", brand: "Killer", url: "https://5.imimg.com/data5/SELLER/Default/2023/7/322006661/UY/WY/RE/141344742/killer-mens-formal-cotton-shirt.jpg" },
+        { id: 2, name: "T-shirt", types: "casual", quality: "Good", price: "120$", brand: "Arrow", url: "https://cdn13.nnnow.com/web-images/large/styles/BO6FVPM9YMH/1719294424290/9.jpg" },
+        { id: 3, name: "Pizza", type: "Cheese", quality: "Good", price: "20$", url: " https://cdn.dotpe.in/longtail/store-items/8034978/BP18MZgK.webp" },
+        { id: 4, name: "Burger", types: "Veg Burger", quality: "Good", price: "10$", url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_FuyUbWUjn6u0FXPnF8eu1BSwtdV4Wkq3Nw&s" },
+        { id: 5, name: "Pooja needs", types: "Dhoop Stick", quality: "Good", price: "12$", url: "https://incenseomega.com/cdn/shop/files/sandal-gold-premium-dhoop-sticks-1.webp?v=1707117192&width=1946" },
+        { id: 6, name: "Cookwear", types: "cookwear sets", quality: "Good", price: "50$", url: "https://images-cdn.ubuy.co.in/64c3a5a40abfb3708b5cc58c-tramontina-primaware-18-piece-non-stick.jpg" },
+        { id: 7, name: "mobile", types: "Gaming", quality: "Good", price: "400$", brand: "Realme", url: "https://www.godigit.com/content/dam/godigit/directportal/en/realme-12-pro-plus-mobile.JPG" },
+        { id: 8, name: "Laptop", types: "Gaming", quality: "Good", price: "800$", brand: "Dell", url: "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/g-series/g16-7630/pdp/laptop-g16-7630-intel-pdp-hero.psd?qlt=95&fit=constrain,1&hei=400&wid=570&fmt=png-alpha" },
+
+    ];
+    document.getElementById('category').innerHTML =
+     categoryData.map(i => 
+     `<button onclick="filtercategory('${i.category}')">${i.category}</button>`).join('')
+
+    function filtercategory(cat) {
+        let filteredProducts = productname.filter(
+            item => (item.category === cat)
+        );
+        document.getElementById('seconddiv').innerHTML =
+            filteredProducts.map(i =>
+                `<button onclick="filtername('${i.name}')">${i.name}</button>`
+            ).join("");
+        document.getElementById('thirddiv').innerHTML = "";
+
+      }
+function filterName(productName) {
+
+  let product = productdetails.find(
+    p => p.name.toLowerCase() === productName.toLowerCase()
+  );
+
+  document.getElementById('thirddiv').innerHTML = `
+    <img src="${product.url}" width="150"><br><br>
+    <b>Name:</b> ${product.name}<br>
+    <b>Type:</b> ${product.types || product.type}<br>
+    <b>Quality:</b> ${product.quality}<br>
+    <b>Price:</b> ${product.price}<br>
+    <b>Brand:</b> ${product.brand || "N/A"}
+  `;
+}
+
+    
+
+</script>
+
+</html>

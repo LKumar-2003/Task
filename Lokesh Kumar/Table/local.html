@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <img src="" alt="" id="pro" height="100">
+        <h2 id="name"></h2>
+        <p id="email"></p>
+    </div>
+</body>
+<script>
+    let name = localStorage.getItem('name')
+    let email = localStorage.getItem('email')
+    let image = localStorage.getItem('profile')
+    document.getElementById('pro').src = image
+    document.getElementById('name').innerHTML = name
+    document.getElementById('email').innerHTML = email
+</script>
+
+</html>

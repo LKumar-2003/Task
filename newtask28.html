@@ -1,0 +1,129 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="maindiv" style="width:200px; height:200px; background-color:blue;">
+    
+        <button onclick="document.getElementById('maindiv').style.backgroundColor='green'">
+            Green
+        </button>
+
+        <button onclick="document.getElementById('maindiv').style.backgroundColor='orange'">
+            Orange
+        </button>
+
+    </div>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #maindiv {
+            width: 200px;
+            height: 200px;
+        }
+
+        #image {
+            width: 200px;
+            height: 200px;
+        }
+
+        #maindiv2 {
+            border: 2px solid black;
+            width: 200px;
+            height: 100px;
+            text-align: center;
+        }
+
+        #maindiv3 {
+            border: 2px solid black;
+            width: 25%;
+            height: 70vh;
+            margin-left: 35%;
+            border-radius: 5%;
+            background-image: url(https://media.istockphoto.com/id/2161589436/vector/abstract-geometry-triangle-blue-mosaic-texture-background-pattern.jpg?s=612x612&w=0&k=20&c=yNHC5ZTZfsElB2SSe7sy62XjAmiETdarAyBBpBQ59HE=);
+            background-size: cover
+            
+        }
+
+        #image1 {
+            border: 2px solid black;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-left: 40%;
+            margin-top: 10%;
+
+        }
+
+        label {
+            margin-left: 25%;
+        }
+
+        #but {
+            width: 70px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="maindiv" style="width:200px; height:200px; background-color:blue;">
+
+    </div>
+    <button onclick="document.getElementById('maindiv').style.backgroundColor='green'">Green</button>
+
+    <button onclick="document.getElementById('maindiv').style.backgroundColor='orange'"> Orange</button><br><br>
+
+
+
+    <div id="maindiv">
+        <img src="https://static.toiimg.com/photo/118413536/118413536.jpg" alt="" id="image">
+        <button
+            onclick=" document.getElementById('image').style='width:200px; height:200px; border-radius: 50%'">Circle</button>
+        <button onclick=" document.getElementById('image').style='width:200px; height:200px'">Previous</button>
+    </div> <br><br>
+
+
+    <div id="maindiv2">
+        <h2 id="heading">HTML</h2>
+        <P id="para">we are learning html</P>
+        <button
+            onclick="document.getElementById('heading').innerHTML='JS',document.getElementById('para').innerHTML='we are learning JavaScript'">JS</button>
+        <button
+            onclick="document.getElementById('heading').innerHTML='CSS',document.getElementById('para').innerHTML='we are learning css'">CSS</button>
+    </div> <br><br>
+    <div id="maindiv3">
+        <div id="image">
+            <img src="myimg.jpeg" alt="" id="image1">
+        </div>
+        <label id="label" for="NAME">Name : Lokesh Kumar</label> <br><br>
+        <label id="label1" for="profession ">Profession: Business </label><br><br>
+        <label id="label2" for="Gmail">Gmail : lokesh@gmail.com</label><br><br>
+        <label id="label3" for="contect">contect : 7987981122</label><br><br>
+        <label id="label4" for="Add">Address : Balod</label><br><br>
+
+    </div>
+    <div id="button">
+    <button
+        onclick="document.getElementById('label').innerHTML='Name : Om Prasad',document.getElementById('label1').innerHTML='Profession : Job ',document.getElementById('label2').innerHTML='Gmail : om@gmail.com',document.getElementById('label3').innerHTML='contect : 7987981133',document.getElementById('label4').innerHTML='Address : Bemetara',document.getElementById('image1').src='om.jpeg'" id="but">Om</button>
+    <button
+        onclick="document.getElementById('label').innerHTML='Name : Nikhil',document.getElementById('label1').innerHTML='Profession : Business ',document.getElementById('label2').innerHTML='Gmail : Nikhil@gmail.com',document.getElementById('label3').innerHTML='contect : 7987581133',document.getElementById('label4').innerHTML='Address : Durg',document.getElementById('image1').src='nikhil.jpeg'" id="but">Nikhil</button>
+    <button
+        onclick="document.getElementById('label').innerHTML='Name : Tarun',document.getElementById('label1').innerHTML='Profession : Job ',document.getElementById('label2').innerHTML='Gmail : Tarun@gmail.com',document.getElementById('label3').innerHTML='contect : 7987781133',document.getElementById('label4').innerHTML='Address : Raipur',document.getElementById('image1').src='tarun.jpeg'" id="but">Tarun</button><br>
+        </div>
+          
+</body>
+</html>

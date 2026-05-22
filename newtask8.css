@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f3f3f3;
+}
+
+.maindiv {
+    width: 900px;
+    height: 500px;
+    background: white;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.menu-left,
+.menu-right {
+    width: 250px;
+}
+
+.menu-left {
+    position: absolute;
+    left: 150px;
+    top: 100px;
+    
+}
+
+.menu-right {
+    position: absolute;
+    right: 50px;
+    top: 100px;
+    margin-left: 50%;
+    padding-right: 35%;
+    text-align: right;
+}
+
+.item {
+    width: 320px;
+    height: 45px;
+    border-radius: 30px;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-weight: bold;
+    color: #333;
+    font-size: 18px;
+    
+}
+
+.yellow {
+    background: #f7e27d;
+}
+
+.blue {
+    background: #b9edf5;
+}
+
+.pink {
+    background: #f7d4ef;
+}
+
+.lion {
+    position: absolute;
+    width: 320px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.heart {
+    position: absolute;
+    top: 30px;
+    right: 300px;
+    width: 60px;
+    height: 60px;
+    background: #ff4d4d;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    
+}

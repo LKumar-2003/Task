@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form {
+
+        border: 5px solid black;
+        width: 40%;
+        height: 80vh;
+        border-radius: 30px;
+        background-color: #ECECEC;
+        padding: auto;
+        /* padding-top: %; */
+        margin: auto;
+
+    }
+
+    h1 {
+        padding-left: 25%;
+        padding-top: 3%;
+        padding-bottom: 3%;
+
+    }
+
+    h1 text {
+     color: #5A5CFF;
+    }
+    input {
+        height: 30px;
+        border: 3px solid #5A5CFF;
+        font-size: medium;
+         background-color: #ECECEC;
+    }
+    input text{
+        color: #4A4A4A;
+    }
+
+    .name {
+        margin-left: 5%;
+        margin-bottom: 10%;
+    }
+
+    .gname {
+        margin-left: 5%;
+        margin-bottom: 10%;
+    }
+
+    .cname {
+        margin-left: 5%;
+        margin-bottom: 2%;
+
+    }
+
+    #rbutton {
+        width: 100px;
+        height: 40px;
+        border-radius: 20px;
+        margin-left: 40%;
+        margin-bottom: 4%;
+        background: linear-gradient(to right, #8B4DFF, #5A5CFF);
+    }
+    #rbutton text{
+        color: #FFFFFF;
+    }
+    #lbutton {
+        margin-left: 85%;
+        width: 80px;
+        height: 40px;
+        border-radius: 20px;
+    }
+</style>
+
+<body>
+    <form action="">
+        <h1>Registration Form</h1>
+        <input type="text" id="fname" class="name" placeholder="Your Frist Name">
+        <input type="text" id="lname" class="name" placeholder="Your Last Name">
+        <input type="text" id="email" class="gname" placeholder="Your Email">
+        <input type="password" id="password" class="gname" placeholder="Your Passeord">
+        <input type="text" id="contact" class="cname" placeholder="Your Contac No. ">
+        <input type="text" id="address" class="cname" placeholder="Your Address "><br><br><br>
+        <button type="button" onclick="handleRegister()" id="rbutton">Register</button> <br><br>
+        <!-- <button onclick="" id="lbutton">Login</button> -->
+        <a href="" onclick="" id="lbutton">Login</a>
+
+    </form>
+</body>
+<script>
+    function handleRegister() {
+        let Fname = document.getElementById('fname').value
+        let Lname = document.getElementById('lname').value
+        let Gmail = document.getElementById('email').value
+        let Password = document.getElementById('password').value
+        let Contact = document.getElementById('contact').value
+        let Address = document.getElementById('address').value
+
+
+        localStorage.setItem('userftname', Fname)
+        localStorage.setItem('userlname', Lname)
+        localStorage.setItem('userEmail', Gmail)
+        localStorage.setItem('userPass', Password)
+        localStorage.setItem('usercon', Contact)
+        localStorage.setItem('useradd', Address)
+
+
+        window.location.href = "Login.html";
+    }
+</script>
+
+</html>

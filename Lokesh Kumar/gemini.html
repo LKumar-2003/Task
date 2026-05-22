@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevPortfolio | Creative Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --bg: #ffffff;
+            --text: #1f2937;
+            --light-bg: #f3f4f6;
+            --card: #ffffff;
+            --border: #e5e7eb;
+        }
+
+        [data-theme="dark"] {
+            --bg: #0f172a;
+            --text: #f8fafc;
+            --light-bg: #1e293b;
+            --card: #1e293b;
+            --border: #334155;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: all 0.3s ease; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        
+        /* Navigation */
+        nav { position: fixed; width: 100%; top: 0; background: var(--bg); border-bottom: 1px solid var(--border); z-index: 1000; padding: 1rem 10%; display: flex; justify-content: space-between; align-items: center; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; }
+        #theme-toggle { cursor: pointer; font-size: 1.2rem; }
+
+        /* Sections */
+        section { padding: 80px 10%; min-height: 100vh; }
+        .hero { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(99, 102, 241, 0.1), transparent); }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .hero span { color: var(--primary); }
+
+        /* Project Filter */
+        .filter-container { margin-bottom: 2rem; display: flex; gap: 1rem; justify-content: center; }
+        .filter-btn { padding: 0.5rem 1.5rem; border: 1px solid var(--primary); background: transparent; color: var(--text); cursor: pointer; border-radius: 20px; }
+        .filter-btn.active { background: var(--primary); color: white; }
+
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .project-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; padding: 1.5rem; }
+        .project-card.hide { display: none; }
+
+        /* Form */
+        form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+        input, textarea { padding: 1rem; border: 1px solid var(--border); border-radius: 8px; background: var(--light-bg); color: var(--text); }
+        button[type="submit"] { padding: 1rem; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><h2>Dev<span>Genius</span></h2></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><i id="theme-toggle" class="fas fa-moon"></i></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1>Hi, I'm <span id="typing-text"></span></h1>
+        <p>I build scalable web applications with modern tech stacks.</p>
+    </section>
+
+    <section id="projects">
+        <h2 style="text-align:center; margin-bottom: 2rem;">My Projects</h2>
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterProjects('all')">All</button>
+            <button class="filter-btn" onclick="filterProjects('react')">React</button>
+            <button class="filter-btn" onclick="filterProjects('backend')">Node.js</button>
+        </div>
+        <div class="projects-grid" id="project-list">
+            <div class="project-card" data-category="react">
+                <h3>E-Commerce Dashboard</h3>
+                <p>A full-featured admin panel using React and Tailwind.</p>
+            </div>
+            <div class="project-card" data-category="backend">
+                <h3>Task API</h3>
+                <p>Secure REST API built with Express and MongoDB.</p>
+            </div>
+            <div class="project-card" data-category="react">
+                <h3>Weather App</h3>
+                <p>Real-time weather tracking using OpenWeather API.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 style="text-align:center; margin-bottom: 2rem;">Get In Touch</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        // 1. Dark/Light Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            themeToggle.className = targetTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        });
+
+        // 2. Typing Effect
+        const text = "a Web Developer.";
+        let i = 0;
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typing-text").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        window.onload = typeWriter;
+
+        // 3. Project Filtering Logic
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.classList.remove('hide');
+                } else {
+                    card.classList.add('hide');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

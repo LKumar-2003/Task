@@ -1,0 +1,141 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #maindiv{
+            display: flex;
+            gap: 10%;
+        }
+        #subdiv {
+            border: 2px solid black;
+            width: 20%;
+            height: 30%;
+            padding-left: 5%;
+            padding-top: 3%;
+            background-image: url(https://static.vecteezy.com/system/resources/thumbnails/008/559/588/small_2x/abstract-futuristic-graphic-modern-background-abstract-wave-gradient-background-banner-background-id-card-brochure-leaflet-etc-gradient-illustration-vector.jpg);
+             background-size: cover
+        }
+
+        #idcarddiv {
+            border: 2px solid black;
+            width: 20%;
+            height: 30%;
+            padding: 7%;
+            background-image: url(https://i.pinimg.com/236x/9f/2a/7b/9f2a7ba4c1486e705f1b086bbefdca4a.jpg);
+            background-size: cover
+        }
+    </style>
+</head>
+
+<body>
+    <div id="maindiv">
+    <div id="subdiv">
+        <input type="text" id="image"><br><br>
+        <input type="text" id="name"><br><br>
+        <input type="email" id="email"><br><br>
+        <input type="text" id="address"><br><br>
+        <input type="text" id="company"><br><br>
+        <input type="number" id="mobileno"><br><br>
+        <button onclick="createid()" id="but">Create profile</button><br><br>
+    </div>
+    <div id="idcarddiv">
+        <img src="" alt="" id="profile" style="width: 100px;height: 100px;border-radius: 50%; margin-left: 20%;">
+        <h3 id="head"></h3>
+        <h3 id="emailid"></h3>
+        <h3 id="add"></h3>
+        <h3 id="com"></h3>
+        <h3 id="mob"></h3>
+    </div>
+    </div>
+</body>
+<script>
+    function createid() {
+        let Image = document.getElementById('image').value
+        document.getElementById('profile').src = Image 
+
+        let Name = document.getElementById('name').value
+        document.getElementById('head').innerHTML ="NAME:  " + Name
+
+        let Email = document.getElementById('email').value
+        document.getElementById('emailid').innerHTML = "Email: " + Email
+
+        let Address = document.getElementById('address').value
+        document.getElementById('add').innerHTML = "Address: " + Address
+
+        let Company = document.getElementById('company').value
+        document.getElementById('com').innerHTML = "Company: " + Company
+
+        let Number = document.getElementById('mobileno').value
+        document.getElementById('mob').innerHTML =" Number: " +  Number
+    }
+</script>
+
+</html> -->
+
+
+!
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table id="calculator">
+        <tr>
+            <td colspan="3"><input type="text" id="result"></td>
+            <td><input type="button" value="c" onclick="clr()"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="1" onclick="dis('1')"> </td>
+            <td><input type="button" value="2" onclick="dis('2')"> </td>
+            <td><input type="button" value="3" onclick="dis('3')"> </td>
+            <td><input type="button" value="4" onclick="dis('/')"> </td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="4" onclick="dis('4')"> </td>
+            <td><input type="button" value="5" onclick="dis('5')"> </td>
+            <td><input type="button" value="6" onclick="dis('6')"> </td>
+            <td><input type="button" value="*" onclick="dis('*')"> </td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="7" onclick="dis('7')"> </td>
+            <td><input type="button" value="8" onclick="dis('8')"> </td>
+            <td><input type="button" value="9" onclick="dis('9')"> </td>
+            <td><input type="button" value="-" onclick="dis('-')"> </td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="0" onclick="dis('0')"> </td>
+            <td><input type="button" value="." onclick="dis('.')"> </td>
+            <td><input type="button" value="=" onclick="calculate()"> </td>
+            <td><input type="button" value="+" onclick="dis('+')"> </td>
+        </tr>
+
+    </table>
+</body>
+<script>
+    function dis(val) {
+        document.getElementById('result').value += val
+    }
+    function solve() {
+        let x = document.getElementById("result").value
+        let y = math.evaluate(x)
+        document.getElementById("result").value = y
+    }
+    function clr() {
+        document.getElementById("result").value = ""
+    }
+</script>
+
+</html>

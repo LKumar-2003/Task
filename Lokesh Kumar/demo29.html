@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #headerdiv {
+            border: 2px solid black;
+            width: 100%;
+            height: 50vh;
+            display: flex;
+        }
+
+        #maindiv {
+            border: 2px solid black;
+            width: 100%;
+            height: 10vh;
+            background-color: aqua;
+        }
+        #name{
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="headerdiv">
+        <h2 id="name"></h2>
+        <h3 id="age"></h3>
+        <h4 id="class"></h4>
+    </div>
+</body>
+<script>
+    const data = [
+        { id: 1, name: 'Lokesh', age: 35, class: 'Bsc' },
+        { id: 2, name: 'Tarun', age: 25, class: 'Msc' },
+        { id: 3, name: 'Bhavesh', age: 25, class: 'MCA' }
+
+    ]
+    document.getElementById('name').innerHTML = data.map(i => (`<h2> ${i.name}</h2>`)).join("")
+    filterData = data.filter(item => (item.age == 23))
+    console.log(filterData)
+
+    document.getElementById('name').innerHTML = filterData.map(i => (`<h2>${i.name}</h2> <p>${i.age}</p> <h4>${i.class}</h4>`))
+    let findData = data.find(a => (a.id == 1))
+    console.log(findData)
+    document.getElementById('name').innerHTML = findData.name
+    document.getElementById('age').innerHTML = findData.age
+    document.getElementById('class').innerHTML = findData.class
+    console.log(data[0].name)
+     document.getElementById('name').innerHTML=data.map(i=>`${i.name} ${i.age} ${i.class} `).join("<br>")
+
+    let filter = data.filter(i => (i.age === 25));
+    console.log(filter)
+    filter.map(i => (document.getElementById('name').innerHTML += `<div id="maindiv">${i.name} <br>
+        <h2>${i.class}</h2><br><br>
+        </div> `))
+
+
+
+</script>
+
+</html>

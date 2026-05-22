@@ -1,0 +1,387 @@
+<!-- <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Register Form with ID Card</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        padding: 20px;
+    }
+    .container {
+        max-width: 400px;
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px #ccc;
+    }
+    input, button {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+    }
+    button {
+        background: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #0056b3;
+    }
+    .id-card {
+        margin-top: 20px;
+        padding: 15px;
+        border: 2px solid #007bff;
+        border-radius: 5px;
+        display: none;
+        background: #e9f3ff;
+    }
+    .id-card h3 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Register Form</h2>
+
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="email" id="email" placeholder="Enter Email">
+    <input type="text" id="phone" placeholder="Enter Phone">
+    <input type="text" id="idnumber" placeholder="Enter ID Number">
+
+    <button onclick="createID()">Register</button>
+
+    <div class="id-card" id="idCard">
+        <h3>ID CARD</h3>
+        <p><strong>Name:</strong> <span id="cardName"></span></p>
+        <p><strong>Email:</strong> <span id="cardEmail"></span></p>
+        <p><strong>Phone:</strong> <span id="cardPhone"></span></p>
+        <p><strong>ID No:</strong> <span id="cardID"></span></p>
+    </div>
+</div>
+
+<script>
+function createID() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let idnumber = document.getElementById("idnumber").value;
+
+    if (name === "" || email === "" || phone === "" || idnumber === "") {
+        alert("Please fill all fields");
+        return;
+    }
+
+    document.getElementById("cardName").innerText = name;
+    document.getElementById("cardEmail").innerText = email;
+    document.getElementById("cardPhone").innerText = phone;
+    document.getElementById("cardID").innerText = idnumber;
+
+    document.getElementById("idCard").style.display = "block";
+}
+</script>
+
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login Store</title>
+</head>
+
+<body>
+
+    <div id="Login">
+        <div class="form-container">
+            <p class="title">Login</p>
+
+            <form class="form" onsubmit="saveData(event)">
+                <div class="input-group">
+                    <label>Username</label>
+                    <input type="text" id="username">
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="password">
+                </div>
+
+                <button class="sign">Sign in</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function saveData(event) {
+            event.preventDefault();
+
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            localStorage.setItem("username", username);
+            localStorage.setItem("password", password);
+
+            alert("Data Stored Successfully!");
+        }
+        localStorage.getItem("username")
+        localStorage.getItem("password")
+    </script>
+
+</body>
+
+</html> -->
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login Redirect</title>
+</head>
+
+<body>
+
+    <form onsubmit="loginUser(event)">
+        <input type="text" id="username" placeholder="Enter Username" required>
+        <br><br>
+
+        <input type="password" id="password" placeholder="Enter Password" required>
+        <br><br>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        function loginUser(event) {
+            event.preventDefault();
+
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            if (username === "admin" && password === "1234") {
+                window.location.href = "home.html";
+            }
+            else {
+                alert("Wrong Credentials");
+            }
+        }
+    </script>
+
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lion Cartoon Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f3f3f3;
+        }
+
+        .container {
+            width: 900px;
+            height: 500px;
+            background: white;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-left,
+        .menu-right {
+            position: absolute;
+            width: 250px;
+        }
+
+        .menu-left {
+            left: 40px;
+            top: 100px;
+        }
+
+        .menu-right {
+            right: 40px;
+            top: 100px;
+        }
+
+        .item {
+            width: 220px;
+            height: 45px;
+            border-radius: 30px;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            padding-left: 25px;
+            font-weight: bold;
+            color: #333;
+            font-size: 18px;
+            animation: slide 2s infinite alternate;
+        }
+
+        .yellow {
+            background: #f7e27d;
+        }
+
+        .blue {
+            background: #b9edf5;
+        }
+
+        .pink {
+            background: #f7d4ef;
+        }
+
+        .lion {
+            position: absolute;
+            width: 320px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            animation: jump 2s infinite;
+        }
+
+        .heart {
+            position: absolute;
+            top: 30px;
+            right: 300px;
+            width: 60px;
+            height: 60px;
+            background: #ff4d4d;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 30px;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes jump {
+            0% {
+                transform: translate(-50%, -50%) translateY(0);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) translateY(-15px);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(10px);
+            }
+        }
+
+        @media(max-width:900px) {
+            .container {
+                width: 95%;
+                height: auto;
+                padding: 30px 0 80px;
+            }
+
+            .lion {
+                position: relative;
+                width: 220px;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+                margin-top: 30px;
+            }
+
+            .menu-left,
+            .menu-right {
+                position: relative;
+                width: 100%;
+                left: 0;
+                right: 0;
+                top: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .heart {
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="heart">❤</div>
+
+        <div class="menu-left">
+            <div class="item yellow">ABOUT</div>
+            <div class="item blue">ADMISSION</div>
+            <div class="item pink">WORK GALLERY</div>
+            <div class="item yellow">BANNERS</div>
+            <div class="item blue">POSTER</div>
+        </div>
+
+        <img class="lion"
+            src="https://cdn-icons-png.flaticon.com/512/616/616408.png"
+            alt="lion">
+
+        <div class="menu-right">
+            <div class="item pink">COMICS</div>
+            <div class="item yellow">VIDEOS</div>
+            <div class="item blue">MOTION GRAPHICS</div>
+            <div class="item pink">DIGITAL ARTS</div>
+        </div>
+
+    </div>
+
+</body>
+
+</html> 

@@ -1,0 +1,151 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #calculatordiv{
+            border: 2px solid black;
+            width: 30%;
+            height: 25vh;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZA3vRnZclEqWX4sqsKKOQw2MQrdjHEN648w&s);
+            background-size: cover;
+            text-align: center;
+            padding: 10%;
+            margin: 10%;
+        }
+        #result{
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="calculatordiv">
+        <input type="number" placeholder=" First Number" id="no1">
+        <input type="number" placeholder="Second Number" id="no2"><br><br>
+          <p id="result">Result</p>
+        <select onchange="calculate(this.value)" id="">
+            <option value="">select Option</option>
+            <option value="+">add</option>
+            <option value="-">sub</option>
+            <option value="*">mul</option>
+            <option value="/">div</option>
+        </select>
+        
+    </div>
+
+</body>
+<script>
+    function calculate(op){
+    let a=Number(document.getElementById('no1').value)
+    let b=Number(document.getElementById('no2').value)
+
+
+    if (op == "+") {
+        document.getElementById('result').innerHTML="sum is:"+(a+b);
+        
+    }
+    else if(op == "-"){
+  document.getElementById('result').innerHTML="sub: "+(a-b)
+    }
+    else if( op == "*"){
+ document.getElementById('result').innerHTML="mul : "+(a*b)
+    }
+    else if( op == "/"){
+ document.getElementById('result').innerHTML="div : " +(a/b)
+    }
+}
+</script>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js"
+        integrity="sha512-BbVEDjbqdN3Eow8+empLMrJlxXRj5nEitiCAK5A1pUr66+jLVejo3PmjIaucRnjlB0P9R3rBUs3g5jXc8ti+fQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js"
+        integrity="sha512-iphNRh6dPbeuPGIrQbCdbBF/qcqadKWLa35YPVfMZMHBSI6PLJh1om2xCTWhpVpmUyb4IvVS9iYnnYMkleVXLA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- for styling -->
+    <style>
+        table {
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        input[type="button"] {
+            width: 100%;
+            padding: 20px 40px;
+            background-color: green;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+        }
+
+        input[type="text"] {
+            padding: 20px 30px;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<!-- create table -->
+
+<body>
+    <table id="calcu">
+        <tr>
+            <td colspan="3"><input type="text" id="result"></td>
+            <!-- clr() function will call clr to clear all value -->
+            <td><input type="button" value="c" onclick="clr()" /> </td>
+        </tr>
+        <tr>
+            <!-- create button and assign value to each button -->
+            <!-- dis("1") will call function dis to display value -->
+            <td><input type="button" value="1" onclick="dis('1')"> </td>
+            <td><input type="button" value="2" onclick="dis('2')"> </td>
+            <td><input type="button" value="3" onclick="dis('3')"> </td>
+            <td><input type="button" value="/" onclick="dis('/')"> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="dis('4')"> </td>
+            <td><input type="button" value="5" onclick="dis('5')"> </td>
+            <td><input type="button" value="6" onclick="dis('6')"> </td>
+            <td><input type="button" value="*" onclick="dis('*')"> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="dis('7')"> </td>
+            <td><input type="button" value="8" onclick="dis('8')"> </td>
+            <td><input type="button" value="9" onclick="dis('9')"> </td>
+            <td><input type="button" value="-" onclick="dis('-')"> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="0" onclick="dis('0')"> </td>
+            <td><input type="button" value="." onclick="dis('.')"> </td>
+            <!-- solve function call function solve to evaluate value -->
+            <td><input type="button" value="=" onclick="solve()"> </td>
+
+            <td><input type="button" value="+" onclick="dis('+')"> </td>
+            <button onclick="appendValue('0')" style="grid-column: span 4;">0</button>
+        </tr>
+
+    </table>
+
+    <script>
+      
+    </script>
+</body>
+
+</html>
